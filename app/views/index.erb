@@ -1,6 +1,6 @@
 <div class="container">
-  <h1><%=@user.screen_name %>'s Tweets</h1>
-  <% @top_tweets.each do |t| %>
-    <p><%=t[:content] %></p>
-    <% end %>
+  <h1 id="username"><span><%=@user.screen_name %></span>'s Tweets</h1>
+  <div id="hidden" display="hidden" data-stale="<%=@user.tweets_stale?%>"></div>
 </div>
+
+<%= erb :_posts, :layout => false, :locals => {tweets: @user.tweets} %>
