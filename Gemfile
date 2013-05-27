@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 
 # PostgreSQL driver
 gem 'pg'
@@ -18,6 +18,8 @@ gem 'rake'
 gem 'shotgun'
 
 gem 'twitter'
+
+gem 'fuzzy-string-match'
 
 group :test do
   gem 'faker'

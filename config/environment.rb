@@ -21,6 +21,7 @@ require "sinatra/reloader" if development?
 require 'erb'
 require 'twitter'
 require 'date'
+require 'fuzzystringmatch'
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
@@ -35,3 +36,9 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 require APP_ROOT.join('config', 'database')
 
 #keep this secret
+Twitter.configure do |config|
+  config.consumer_key = "XtepiWcGFh9reYudRP69wA"
+  config.consumer_secret = "uWv9Kow4SUCVL9zg0pxNzOyUoXwdmy4FreYZ4IuxVg"
+  config.oauth_token = "17456158-YeHPfBaXJA8r8d1xUv58wOMTyg5jnMuHpupGqQuDU"
+  config.oauth_token_secret = "ywfjBlwLEyYLzEkzO820r4EUZIZwMxb20T9d3woN8"
+end
